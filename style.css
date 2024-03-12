@@ -1,0 +1,192 @@
+/*=========== RESET ===========*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+/*=========== VARIABLES ===========*/
+:root {
+  --header-height: 4.5rem;
+  /* colors */
+  --hue: 33;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 90% 60%);
+  --base-color-second: hsl(var(--hue) 70% 88%);
+  --base-color-alt: hsl(var(--hue) 80% 65%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 25%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+  /* fonts-size */
+  --title-font-size: 3rem;
+  --subtitle-font-size: 0.75rem;
+  /* fonts */
+  --title-font: "Monoton", sans-serif;
+  --body-font: "Poppins", sans-serif;
+}
+/*=========== BASE ===========*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font: 400 1rem var(--body-font);
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
+}
+.title {
+  font: 400 var(--title-font-size) var(--title-font);
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+.button {
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 00.25rem;
+  transition: background 0.3s;
+  font: 500 1rem var(--body-font);
+}
+.button:hover {
+  background: var(--base-color-alt);
+}
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 50%, 88%, 0.34)
+  );
+}
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 50%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
+}
+/*=========== LAYOUT ===========*/
+.container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+#header {
+  border-bottom: 0.5px solid #e4e4e4;
+  margin-bottom: 1rem;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#header h1 .subtitle {
+  font: 1rem var(--body-font);
+}
+/*=========== LOGO ===========*/
+.logo {
+  font: 400 1.5rem var(--title-font);
+  color: var(--base-color);
+}
+/*=========== HOME ===========*/
+#about .container {
+  margin: 0;
+}
+#home {
+  padding: calc(4rem + var(--header-height)) 0;
+  background-image: url("assets/images/image3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#home .title {
+  font: 400 var(--title-font-size) var(--body-font);
+  color: var(--text-color-light);
+}
+#home .section {
+  justify-content: space-between;
+}
+#home .text {
+  padding: 0px 0px 30px 0px;
+  text-align: center;
+}
+#home .text p {
+  margin-bottom: 1rem;
+}
+/*=========== ABOUT ===========*/
+#about .container {
+  margin: 0;
+}
+#about .text {
+  margin-top: -3rem;
+  margin-right: 3rem;
+  text-align: center;
+}
+#about .text h1 {
+  margin-bottom: 0.5rem;
+}
+#about .text p {
+  margin-bottom: 1rem;
+}
+#about {
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#about .image {
+  margin-top: auto;
+  margin-left: 10px;
+  max-width: 400px;
+}
+#about img {
+  width: 100%; /* Define a largura da imagem como 100% do contêiner pai */
+  height: auto; /* Mantém a proporção da imagem */
+}
+/*=========== FOOTER ===========*/
+footer {
+  background-image: url(assets/images/image4.jpg);
+  background-size: cover;
+  background-position: center;
+}
+footer.section {
+  padding: 4rem 0;
+}
+footer .logo {
+  display: inline-block;
+  margin-right: 5rem;
+  margin-bottom: 1rem;
+  color: var(--body-color);
+}
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+.links {
+  font: 500 2rem var(--subtitle-font-size);
+  color: var(--text-color-light);
+  text-align: left;
+  margin-right: 1.5rem;
+}
