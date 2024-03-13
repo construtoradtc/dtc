@@ -40,7 +40,7 @@ html {
 }
 body {
   font: 400 1rem var(--body-font);
-  color: var(--text-color);
+  color: var(--base-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
@@ -56,7 +56,6 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0 2rem;
-  border-radius: 00.25rem;
   transition: background 0.3s;
   font: 500 1rem var(--body-font);
 }
@@ -99,67 +98,98 @@ body {
   left: 0;
   width: 100%;
 }
-#header h1 .subtitle {
-  font: 1rem var(--body-font);
-}
 /*=========== LOGO ===========*/
 .logo {
   font: 400 1.5rem var(--title-font);
   color: var(--base-color);
 }
 /*=========== HOME ===========*/
-#about .container {
-  margin: 0;
-}
 #home {
+  display: flex;
+  justify-content: center;
   padding: calc(4rem + var(--header-height)) 0;
   background-image: url("assets/images/image3.jpg");
   background-size: cover;
   background-position: center;
 }
-#home .title {
-  font: 400 var(--title-font-size) var(--body-font);
-  color: var(--text-color-light);
+.cards.grid {
+  gap: 1.5rem;
 }
-#home .section {
-  justify-content: space-between;
-}
-#home .text {
-  padding: 0px 0px 30px 0px;
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(22, 22, 22, 0.897);
+  border-bottom: 00.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+  text-shadow: 2px 2px 4px #ffffff;
 }
-#home .text p {
-  margin-bottom: 1rem;
+.card p {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--body-color);
+}
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--body-color);
 }
 /*=========== ABOUT ===========*/
 #about .container {
   margin: 0;
 }
-#about .text {
-  margin-top: -3rem;
-  margin-right: 3rem;
-  text-align: center;
-}
-#about .text h1 {
-  margin-bottom: 0.5rem;
-}
-#about .text p {
-  margin-bottom: 1rem;
-}
 #about {
-  background-color: var(--body-color);
+  background-color: #f7f7f7;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha quando não couberem mais na linha atual */
+  justify-content: center;
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+#about .column {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin: 0 20px;
+}
+#about .button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  box-shadow: 0px 0px 12px rgba(22, 22, 22, 0.897);
+  height: 3.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0 6rem;
+  transition: background 0.3s;
+  font: 500 1rem var(--body-font);
+  margin-bottom: 20px;
+}
+#about .button-link:hover {
+  background: var(--base-color-alt);
+}
+#about .button-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+#about .button-link a:visited {
+  color: inherit;
 }
 #about .image {
   margin-top: auto;
   margin-left: 10px;
-  max-width: 400px;
+  max-width: 100%;
 }
 #about img {
-  width: 100%; /* Define a largura da imagem como 100% do contêiner pai */
-  height: auto; /* Mantém a proporção da imagem */
+  width: auto;
+  height: auto;
+  max-height: 350px;
 }
 /*=========== FOOTER ===========*/
 footer {
