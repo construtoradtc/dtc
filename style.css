@@ -126,6 +126,10 @@ body {
   color: var(--text-color);
   text-shadow: 1px 1px 3px var(--body-color);
 }
+#home .card h3 {
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px var(--body-color);
+}
 /*=========== ABOUT ===========*/
 #about {
   padding: var(--header-height) 0;
