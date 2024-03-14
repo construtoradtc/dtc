@@ -22,12 +22,12 @@ a {
   --base-color-second: hsl(var(--hue) 70% 88%);
   --base-color-alt: hsl(var(--hue) 80% 65%);
   --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(0 0% 25%);
+  --text-color: hsl(0, 4%, 15%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0, 0%, 97%);
   /* fonts-size */
   --title-font-size: 62, 5%;
-  --subtitle-font-size: 62, 5%;
+  --subtitle-font-size: 62, 10%;
   /* fonts */
   --title-font: "Monoton", sans-serif;
   --body-font: "Poppins", sans-serif;
@@ -55,7 +55,7 @@ body {
   background: var(--base-color-alt);
 }
 .divider-1 {
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 36%, 57%, 1),
@@ -63,7 +63,7 @@ body {
   );
 }
 .divider-2 {
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 50%, 88%, 0.34),
@@ -92,14 +92,14 @@ body {
 }
 /*=========== LOGO ===========*/
 .logo {
-  font: 400 1.5rem var(--title-font);
+  font: 400 5rem var(--title-font);
   color: var(--base-color);
 }
 /*=========== HOME ===========*/
 #home {
   display: flex;
   justify-content: center;
-  padding: calc(4rem + var(--header-height)) 0;
+  padding: calc(3rem + var(--header-height)) 0;
   background-image: url("assets/images/image3.jpg");
   background-size: cover;
   background-position: center;
@@ -108,25 +108,28 @@ body {
   gap: 1.5rem;
 }
 #home .card {
-  padding: 3.625rem 2rem;
-  box-shadow: 0px 0px 12px rgba(22, 22, 22, 0.897);
-  border-bottom: 00.25rem solid var(--base-color);
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 70%, 57%, 1),
+    hsla(var(--hue), 50%, 88%, 0.34)
+  );
+  padding: 5rem 2rem;
+  width: calc(95% - 2rem);
+  box-shadow: 0px 0px 8px rgba(245, 234, 234, 0.897);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
-  text-shadow: 2px 2px 4px var(--body-color);
-}
-#home .card p {
-  display: block;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  color: var(--body-color);
+  text-shadow: 3px 3px 5px var(--text-color);
 }
 #home .card h2 {
-  font-size: 1.5rem;
+  font-size: 3rem;
   margin-bottom: 0.75rem;
-  color: var(--body-color);
+  color: var(--text-color);
+  text-shadow: 1px 1px 3px var(--body-color);
 }
 /*=========== ABOUT ===========*/
+#about {
+  padding: var(--header-height) 0;
+}
 #about .container {
   margin: 0;
 }
@@ -136,21 +139,18 @@ body {
   justify-content: center;
 }
 #about .card {
-  padding: 1rem 1rem;
+  padding: 2rem 1rem;
   box-shadow: 0px 0px 6px rgba(37, 36, 36, 0.897);
-  border-top: 0.25rem solid var(--base-color);
-  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom: 0.25rem solid var(--text-color);
   transition: background 0.3s;
   text-align: center;
   width: calc(50% - 2rem);
   margin: 1rem;
+  color: inherit;
 }
-.card:hover {
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 50%, 88%, 0.34),
-    hsla(var(--hue), 36%, 57%, 1)
-  );
+#about .logo {
+  font: 400 1.5rem var(--title-font);
+  color: var(--base-color);
 }
 #about img {
   width: auto;
@@ -161,6 +161,7 @@ body {
 footer .container {
   display: flex;
   justify-content: space-evenly;
+  padding: calc(1rem + var(--header-height)) 0;
 }
 footer.section {
   padding: 4rem 0;
@@ -170,15 +171,12 @@ footer {
   background-size: cover;
   background-position: center;
 }
-footer .logo {
-  display: inline-block;
-  margin-right: 5rem;
-  margin-bottom: 1rem;
-  color: var(--body-color);
+footer .links i {
+  font: calc(5rem + var(--subtitle-font-size));
+  color: var(--base-color-second);
 }
-.links {
-  font: 500 2rem var(--subtitle-font-size);
-  color: var(--text-color-light);
-  text-align: left;
-  margin-right: 1.5rem;
+footer .links li {
+  font-size: 1.5rem;
+  color: var(--base-color-second);
+  text-shadow: 2px 2px 4px var(--text-color);
 }
