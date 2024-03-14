@@ -3,16 +3,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ul {
   list-style: none;
 }
 a {
   text-decoration: none;
-}
-img {
-  width: 100%;
-  height: 100%;
 }
 /*=========== VARIABLES ===========*/
 :root {
@@ -26,10 +24,10 @@ img {
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 25%);
   --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 98%);
+  --body-color: hsl(0, 0%, 97%);
   /* fonts-size */
-  --title-font-size: 3rem;
-  --subtitle-font-size: 0.75rem;
+  --title-font-size: 62, 5%;
+  --subtitle-font-size: 62, 5%;
   /* fonts */
   --title-font: "Monoton", sans-serif;
   --body-font: "Poppins", sans-serif;
@@ -40,14 +38,8 @@ html {
 }
 body {
   font: 400 1rem var(--body-font);
-  color: var(--base-color);
+  color: var(--text-color);
   background: var(--body-color);
-  -webkit-font-smoothing: antialiased;
-}
-.title {
-  font: 400 var(--title-font-size) var(--title-font);
-  color: var(--title-color);
-  -webkit-font-smoothing: auto;
 }
 .button {
   background-color: var(--base-color);
@@ -88,7 +80,7 @@ body {
   gap: 1rem;
 }
 #header {
-  border-bottom: 0.5px solid #e4e4e4;
+  border-bottom: 0.5px solid var(--body-color);
   margin-bottom: 1rem;
   display: flex;
   position: absolute;
@@ -112,24 +104,24 @@ body {
   background-size: cover;
   background-position: center;
 }
-.cards.grid {
+.card.grid {
   gap: 1.5rem;
 }
-.card {
+#home .card {
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(22, 22, 22, 0.897);
   border-bottom: 00.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
-  text-shadow: 2px 2px 4px #ffffff;
+  text-shadow: 2px 2px 4px var(--body-color);
 }
-.card p {
+#home .card p {
   display: block;
   margin-bottom: 1.5rem;
   font-size: 1rem;
   color: var(--body-color);
 }
-.card h2 {
+#home .card h2 {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   color: var(--body-color);
@@ -138,81 +130,51 @@ body {
 #about .container {
   margin: 0;
 }
-#about {
-  background-color: #f7f7f7;
-  display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha quando não couberem mais na linha atual */
-  justify-content: center;
-  align-items: center; /* Centraliza os itens verticalmente */
-}
 #about .column {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 20px;
-}
-#about .button-link {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  background-color: var(--base-color);
-  color: var(--text-color-light);
-  box-shadow: 0px 0px 12px rgba(22, 22, 22, 0.897);
-  height: 3.5rem;
-  border: none;
-  outline: none;
-  border-radius: 0.5rem;
-  padding: 0 6rem;
+}
+#about .card {
+  padding: 1rem 1rem;
+  box-shadow: 0px 0px 6px rgba(37, 36, 36, 0.897);
+  border-top: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
   transition: background 0.3s;
-  font: 500 1rem var(--body-font);
-  margin-bottom: 20px;
+  text-align: center;
+  width: calc(50% - 2rem);
+  margin: 1rem;
 }
-#about .button-link:hover {
-  background: var(--base-color-alt);
-}
-#about .button-link a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
-}
-#about .button-link a:visited {
-  color: inherit;
-}
-#about .image {
-  margin-top: auto;
-  margin-left: 10px;
-  max-width: 100%;
+.card:hover {
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 50%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
 }
 #about img {
   width: auto;
   height: auto;
-  max-height: 350px;
+  max-width: 10rem;
 }
 /*=========== FOOTER ===========*/
+footer .container {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer.section {
+  padding: 4rem 0;
+}
 footer {
   background-image: url(assets/images/image4.jpg);
   background-size: cover;
   background-position: center;
-}
-footer.section {
-  padding: 4rem 0;
 }
 footer .logo {
   display: inline-block;
   margin-right: 5rem;
   margin-bottom: 1rem;
   color: var(--body-color);
-}
-footer .brand p {
-  color: var(--text-color-light);
-  margin-bottom: 1rem;
-}
-footer .container {
-  display: flex;
-  justify-content: space-between;
 }
 .links {
   font: 500 2rem var(--subtitle-font-size);
