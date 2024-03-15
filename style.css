@@ -119,6 +119,7 @@ body {
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
   text-shadow: 3px 3px 5px var(--text-color);
+  word-wrap: break-word;
 }
 #home .card h2 {
   font-size: 3rem;
